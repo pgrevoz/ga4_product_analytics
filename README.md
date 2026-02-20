@@ -194,7 +194,7 @@ data/
   exports/
 
 README.md
-🔧 How to Reproduce
+How to Reproduce
 Set up BigQuery project
 Connect dbt to GA4 public dataset
 Run:
