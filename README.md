@@ -148,31 +148,33 @@ Success metric: Reduce checkout abandonment by 20%
 
 ## Suggested Experiments
 - Experiment 1: Product page CTA optimization (A/B Test)
-Hypothesis: Adding prominent "Add to Cart" CTAs above the fold and displaying key value props (shipping, returns) will increase View → Cart conversion by 5pp (from 19.7% to 24.6%).
-Test Design:
-Control: Current product page layout
-Variant A: Bigger, more visible “Add to Cart” button placed high on the page, plus a small strip highlighting key benefits (e.g. free returns, fast delivery).
-Variant B:  “Quick View” pop‑up where users can see key product info and add to cart without leaving the listing page, with benefits shown right inside that pop‑up.
-Traffic Split: 33/33/34
-Duration: 4 weeks
-Sample Size: ~25,000 sessions per variant
-Success Metrics:
-Primary: View → Cart conversion rate (target: +5pp)
-Secondary: Time to add to cart, bounce rate, overall conversion rate
-Decision Criteria: Variant with highest View → Cart conversion (statistically significant at p<0.05) wins and rolls out.
+  
+Hypothesis: Adding prominent "Add to Cart" CTAs above the fold and displaying key value props (shipping, returns) will increase View → Cart conversion by 5pp (from 19.7% to 24.6%).  
+Test Design:  
+Control: Current product page layout  
+Variant A: Bigger, more visible “Add to Cart” button placed high on the page, plus a small strip highlighting key benefits (e.g. free returns, fast delivery).  
+Variant B:  “Quick View” pop‑up where users can see key product info and add to cart without leaving the listing page, with benefits shown right inside that pop‑up.  
+Traffic Split: 33/33/34  
+Duration: 4 weeks  
+Sample Size: ~25,000 sessions per variant  
+Success Metrics:  
+Primary: View → Cart conversion rate (target: +5pp)  
+Secondary: Time to add to cart, bounce rate, overall conversion rate  
+Decision Criteria: Variant with highest View → Cart conversion (statistically significant at p<0.05) wins and rolls out.  
 
 - Experiment 2: Checkout simplification (A/B Test)
-Hypothesis: A single-page checkout with guest option will increase Checkout → Purchase conversion from 43.6% to 50% by reducing friction.
-Test Design:
-Control: Multi-step checkout (current state)
-Variant: Single-page checkout with prominent guest checkout option
-Traffic Split: 50/50
-Duration: 4 weeks
-Sample Size: ~5,500 checkout starts per variant
-Success Metrics:
-Primary: Checkout → Purchase conversion rate (target: 50%+)
-Secondary: Checkout completion time, form errors, guest vs. registered conversion
-Decision Criteria: Variant with ≥6.4pp lift (statistically significant) wins. Monitor for impact on customer data collection.
+  
+Hypothesis: A single-page checkout with guest option will increase Checkout → Purchase conversion from 43.6% to 50% by reducing friction.  
+Test Design:  
+Control: Multi-step checkout (current state)  
+Variant: Single-page checkout with prominent guest checkout option  
+Traffic Split: 50/50  
+Duration: 4 weeks  
+Sample Size: ~5,500 checkout starts per variant  
+Success Metrics:  
+Primary: Checkout → Purchase conversion rate (target: 50%+)  
+Secondary: Checkout completion time, form errors, guest vs. registered conversion  
+Decision Criteria: Variant with ≥6.4pp lift (statistically significant) wins. Monitor for impact on customer data collection.  
 
 ## Why This Project Matters
 This project demonstrates:
