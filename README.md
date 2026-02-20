@@ -14,9 +14,6 @@ The objective was to replicate a real-world Product Analytics workflow:
 - Business insights and product recommendations
 
 ## Architecture
-👉 **[View interactive dashboard on Tableau Public](https://public.tableau.com/views/ConversionFunnelAnalysis_17714995033540/ConversionFunnelAnalysis?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
-
-![London Rental Dashboard Preview](visuals/conversion_funnel_analysis_preview.png)
 
 - Data Source
 GA4 public e-commerce dataset
@@ -54,6 +51,10 @@ Checkout → Purchase
 View → Purchase (overall conversion)
 
 ## Dashboard Structure
+
+👉 **[View interactive dashboard on Tableau Public](https://public.tableau.com/views/ConversionFunnelAnalysis_17714995033540/ConversionFunnelAnalysis?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+
+![London Rental Dashboard Preview](visuals/conversion_funnel_analysis_preview.png)
 
 1. Overall Conversion
 Displays:
