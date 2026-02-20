@@ -177,14 +177,14 @@ Secondary: Checkout completion time, form errors, guest vs. registered conversio
 Decision Criteria: Variant with ≥6.4pp lift (statistically significant) wins. Monitor for impact on customer data collection.  
 
 ## Why This Project Matters
-This project demonstrates:
-End-to-end analytics engineering workflow
-Event-based modelling using GA4
-Session-level funnel logic
-Marketing attribution grouping
-Executive-ready data storytelling
-Business-oriented recommendations
-It reflects how a Product Analyst would structure analysis in a real-world e-commerce environment.
+This project demonstrates:  
+- End-to-end analytics engineering workflow  
+- Event-based modelling using GA4  
+- Session-level funnel logic  
+- Marketing attribution grouping  
+- Executive-ready data storytelling  
+- Business-oriented recommendations  
+- It reflects how a Product Analyst would structure analysis in a real-world e-commerce environment.
 
 ## Repository Structure
 models/
@@ -196,19 +196,23 @@ data/
   exports/
 
 README.md
-How to Reproduce
-Set up BigQuery project
-Connect dbt to GA4 public dataset
-Run:
-dbt run
-dbt test
-Export marts layer for visualisation
-Open in Tableau Public
-🎯 Next Steps
-Retention analysis post-purchase
-New vs Returning user comparison
-Revenue per session analysis
-Advanced attribution modelling
-Funnel strict ordering using timestamps
-🏁 Conclusion
+
+## How to Reproduce  
+1- Set up BigQuery project  
+2- Connect dbt to GA4 public dataset  
+3- Run:  
+- dbt run  
+- dbt test
+  
+4- Export marts layer for visualisation  
+5- Open in Tableau Public  
+
+## Next Steps
+Retention analysis post-purchase  
+New vs Returning user comparison  
+Revenue per session analysis  
+Advanced attribution modelling 
+Funnel strict ordering using timestamps  
+
+## Conclusion
 This project illustrates how structured data modelling and clear visual storytelling can turn raw event data into actionable product and marketing insights.
