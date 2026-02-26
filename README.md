@@ -24,6 +24,8 @@ Google BigQuery (sandbox environment)
 
 - Transformation Layer
 dbt
+Live dbt documentation:
+https://pgrevoz.github.io/ga4_product_analytics/
 
 - Structured layers:
 stg (cleaned events)
