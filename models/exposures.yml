@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+  - name: tableau_conversion_funnel_analysis
+    label: Conversion Funnel Analysis Dashboard
+    type: dashboard
+    maturity: medium
+    url: https://public.tableau.com/views/ConversionFunnelAnalysis_17714995033540/ConversionFunnelAnalysis?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+    description: Tableau dashboard used to monitor funnel conversion performance globally, by device and by acquisition channel.
+    depends_on:
+      - ref('fct_funnel_daily')
+    owner:
+      name: Philippe Grevoz
+      email: p.grevoz@gmail.com

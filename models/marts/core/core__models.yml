@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_funnel_daily
+    description: Daily funnel performance mart aggregated by key traffic and device dimensions.
+    columns:
+      - name: event_date
+        description: Event date in `YYYYMMDD` format.
+      - name: device_category
+        description: Device category dimension.
+      - name: traffic_source
+        description: Traffic source dimension.
+      - name: channel_group
+        description: "{{ doc('ga4_channel_group') }}"
+      - name: traffic_medium
+        description: Traffic medium dimension.
+      - name: country
+        description: Country dimension.
+      - name: sessions
+        description: Distinct count of sessions.
+      - name: sessions_with_view_item
+        description: Sessions containing at least one `view_item` event.
+      - name: sessions_with_add_to_cart
+        description: Sessions containing at least one `add_to_cart` event.
+      - name: sessions_with_begin_checkout
+        description: Sessions containing at least one `begin_checkout` event.
+      - name: sessions_with_purchase
+        description: Sessions containing at least one `purchase` event.
+      - name: cart_rate_from_view
+        description: Add-to-cart sessions divided by view-item sessions.
+      - name: checkout_rate_from_cart
+        description: Begin-checkout sessions divided by add-to-cart sessions.
+      - name: purchase_rate_from_checkout
+        description: Purchase sessions divided by begin-checkout sessions.
+      - name: purchase_rate_from_view
+        description: Purchase sessions divided by view-item sessions (overall conversion from view).

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fct_funnel_by_channel
+    description: Funnel performance aggregated at channel-group level for comparison.
+    columns:
+      - name: channel_group
+        description: "{{ doc('ga4_channel_group') }}"
+      - name: sessions
+        description: Count of sessions in each channel group.
+      - name: sessions_view_item
+        description: Sessions with at least one `view_item` event.
+      - name: sessions_add_to_cart
+        description: Sessions with at least one `add_to_cart` event.
+      - name: sessions_begin_checkout
+        description: Sessions with at least one `begin_checkout` event.
+      - name: sessions_purchase
+        description: Sessions with at least one `purchase` event.
+      - name: view_to_cart_rate
+        description: "sessions_add_to_cart / sessions_view_item."
+      - name: cart_to_checkout_rate
+        description: "sessions_begin_checkout / sessions_add_to_cart."
+      - name: checkout_to_purchase_rate
+        description: "sessions_purchase / sessions_begin_checkout."
+      - name: overall_conversion_rate
+        description: "sessions_purchase / sessions_view_item."
+
+  - name: fct_funnel_by_device
+    description: Funnel performance aggregated by device category.
+    columns:
+      - name: device_category
+        description: Device category dimension.
+      - name: sessions
+        description: Count of sessions in each device category.
+      - name: sessions_view_item
+        description: Sessions with at least one `view_item` event.
+      - name: sessions_add_to_cart
+        description: Sessions with at least one `add_to_cart` event.
+      - name: sessions_begin_checkout
+        description: Sessions with at least one `begin_checkout` event.
+      - name: sessions_purchase
+        description: Sessions with at least one `purchase` event.
+      - name: view_to_cart_rate
+        description: "sessions_add_to_cart / sessions_view_item."
+      - name: cart_to_checkout_rate
+        description: "sessions_begin_checkout / sessions_add_to_cart."
+      - name: checkout_to_purchase_rate
+        description: "sessions_purchase / sessions_begin_checkout."
+      - name: overall_conversion_rate
+        description: "sessions_purchase / sessions_view_item."

@@ -2,54 +2,54 @@
 BigQuery · dbt · Tableau Public
 
 ## Project Overview
-This project analyses the GA4 public e-commerce dataset to evaluate user behaviour across the purchase funnel, with a specific focus on:
-Funnel performance
-Device performance (Mobile vs Desktop)
-Acquisition channel performance (e.g. Paid vs Organic)
-The objective was to replicate a real-world Product Analytics workflow:
-- Raw event-level data in BigQuery
-- Structured transformation using dbt
-- Session-level funnel modelling
-- Executive dashboard in Tableau Public
-- Business insights and product recommendations
+This project analyses the GA4 public e-commerce dataset to evaluate user behaviour across the purchase funnel, with a specific focus on:  
+Funnel performance  
+Device performance (Mobile vs Desktop)  
+Acquisition channel performance (e.g. Paid vs Organic)  
+The objective was to replicate a real-world Product Analytics workflow:  
+- Raw event-level data in BigQuery  
+- Structured transformation using dbt  
+- Session-level funnel modelling  
+- Executive dashboard in Tableau Public  
+- Business insights and product recommendations  
 
 ## Architecture
 
-- Data Source
-GA4 public e-commerce dataset
+- Data Source  
+GA4 public e-commerce dataset  
 bigquery-public-data.ga4_obfuscated_sample_ecommerce
 
-- Data Warehouse
+- Data Warehouse  
 Google BigQuery (sandbox environment)
 
-- Transformation Layer
-dbt
-Live dbt documentation:
+- Transformation Layer  
+dbt  
+Live dbt documentation:  
 https://pgrevoz.github.io/ga4_product_analytics/
 
-- Structured layers:
-stg (cleaned events)
-intermediate (session-level funnel flags)
+- Structured layers:  
+stg (cleaned events)  
+intermediate (session-level funnel flags)  
 marts (analysis-ready tables)
 
-- Visualisation
+- Visualisation  
 Tableau Public (CSV extracts from marts layer)
 
 ## Modelling Approach
-- Session-Level Funnel Logic
-The funnel was constructed at the session level using binary flags:
-did_view_item
-did_add_to_cart
-did_begin_checkout
-did_purchase
-This allows clean step-to-step conversion analysis while keeping the modelling simple and performant.
+- Session-Level Funnel Logic  
+The funnel was constructed at the session level using binary flags:  
+did_view_item  
+did_add_to_cart  
+did_begin_checkout  
+did_purchase  
+This allows clean step-to-step conversion analysis while keeping the modelling simple and performant.  
 
 - Funnel Structure
-View Item → Add to Cart → Begin Checkout → Purchase
-Conversion rates were calculated as:
-View → Cart
-Cart → Checkout
-Checkout → Purchase
+View Item → Add to Cart → Begin Checkout → Purchase  
+Conversion rates were calculated as:  
+View → Cart  
+Cart → Checkout  
+Checkout → Purchase  
 View → Purchase (overall conversion)
 
 ## Dashboard Structure
@@ -58,39 +58,39 @@ View → Purchase (overall conversion)
 
 ![London Rental Dashboard Preview](visuals/conversion_funnel_analysis_preview.png)
 
-1. Overall Conversion
-Displays:
-Global overall conversion rate
-Select Split by Channel or device
-Compares:
-Session volume
-Conversion rates
-Drop-off patterns when click on a bar
-Purpose:
+1. Overall Conversion  
+Displays:  
+Global overall conversion rate  
+Select Split by Channel or device  
+Compares:  
+Session volume  
+Conversion rates  
+Drop-off patterns when click on a bar  
+Purpose:  
 Identify UX friction and device-specific performance gaps.
 
-2. Funnel Overview
-Displays:
-Total sessions
-Step progression
-Step-to-step drop-offs
-Purpose:
-Identify where users drop off in the purchase journey.
+2. Funnel Overview  
+Displays:  
+Total sessions  
+Step progression  
+Step-to-step drop-offs  
+Purpose:  
+Identify where users drop off in the purchase journey.  
 
-3. Weekly overall conversion rate by selected split
-Displays:
-Overall conversion rate by week by split over the selected period + number of weekly sessions
-Purpose:
-Evaluate seasonality or timely impact on overall conversion.
+3. Weekly overall conversion rate by selected split  
+Displays:  
+Overall conversion rate by week by split over the selected period + number of weekly sessions  
+Purpose:  
+Evaluate seasonality or timely impact on overall conversion.  
 
 ## Key Findings
 
 Funnel Performance: Early-stage friction drives conversion loss
-- Analysis of 360,974 sessions reveals a 6.3% overall conversion rate (View Item → Purchase), with the largest drop-off occurring before users add items to cart.
-Using a consistent base (View Item) makes it easier to see where product/UX friction appears after intent is expressed.
-- View Item → Add to Cart converts at 19.7% (15,225 of 77,203), representing an 80% drop-off—the primary conversion bottleneck.
-- Cart → Checkout converts at 73.1% (11,123 of 15,225), suggesting cart abandonment is less critical than initial engagement.
-- Checkout → Purchase converts at 43.6% (4,851 of 11,123), indicating checkout friction affects over half of users who begin checkout.
+- Analysis of 360,974 sessions reveals a 6.3% overall conversion rate (View Item → Purchase), with the largest drop-off occurring before users add items to cart.  
+- Using a consistent base (View Item) makes it easier to see where product/UX friction appears after intent is expressed.  
+- View Item → Add to Cart converts at 19.7% (15,225 of 77,203), representing an 80% drop-off—the primary conversion bottleneck.  
+- Cart → Checkout converts at 73.1% (11,123 of 15,225), suggesting cart abandonment is less critical than initial engagement.  
+- Checkout → Purchase converts at 43.6% (4,851 of 11,123), indicating checkout friction affects over half of users who begin checkout.  
 
 Business impact: 
 Improving View → Cart conversion by 5 percentage points (from 19.7% to 24.7%) could yield ~3,860 additional purchases, representing a 79% increase in revenue.

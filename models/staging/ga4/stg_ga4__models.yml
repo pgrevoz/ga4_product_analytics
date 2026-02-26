@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_ga4__events
+    description: Standardized GA4 event-level records with core user, device, geo, and traffic fields.
+    columns:
+      - name: event_date
+        description: Event date in `YYYYMMDD` format from GA4 export table partition.
+      - name: event_ts
+        description: Event timestamp converted from microseconds to timestamp.
+      - name: event_name
+        description: GA4 event name.
+      - name: user_id
+        description: Pseudonymous GA4 user identifier (`user_pseudo_id`).
+      - name: device_category
+        description: Device category from GA4 (for example `desktop`, `mobile`, `tablet`).
+      - name: country
+        description: Country derived from GA4 geo fields.
+      - name: traffic_source
+        description: Source dimension from GA4 traffic source.
+      - name: traffic_medium
+        description: Medium dimension from GA4 traffic source.
+
+  - name: stg_ga4__event_params
+    description: GA4 event parameters unnested to one row per event parameter key.
+    columns:
+      - name: event_date
+        description: Event date in `YYYYMMDD` format from GA4 export.
+      - name: event_ts
+        description: Event timestamp converted from microseconds to timestamp.
+      - name: user_id
+        description: Pseudonymous GA4 user identifier (`user_pseudo_id`).
+      - name: event_name
+        description: GA4 event name for the parameter row.
+      - name: param_key
+        description: Event parameter key.
+      - name: param_string_value
+        description: String typed value for the parameter key when available.
+      - name: param_int_value
+        description: Integer typed value for the parameter key when available.
+      - name: param_float_value
+        description: Float typed value for the parameter key when available.
+      - name: param_double_value
+        description: Double typed value for the parameter key when available.

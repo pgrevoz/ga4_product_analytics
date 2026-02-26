@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: int_ga4__events_enriched
+    description: Event-level GA4 data enriched with key parameters and standardized channel grouping.
+    columns:
+      - name: event_date
+        description: Event date in `YYYYMMDD` format from GA4 export.
+      - name: event_ts
+        description: Event timestamp.
+      - name: event_name
+        description: GA4 event name.
+      - name: user_id
+        description: Pseudonymous GA4 user identifier.
+      - name: device_category
+        description: Device category from GA4.
+      - name: country
+        description: Country from GA4 geo fields.
+      - name: traffic_source
+        description: Source dimension from GA4 traffic source.
+      - name: channel_group
+        description: "{{ doc('ga4_channel_group') }}"
+      - name: traffic_medium
+        description: Medium dimension from GA4 traffic source.
+      - name: ga_session_id
+        description: Session ID extracted from event params.
+      - name: session_id
+        description: "{{ doc('ga4_session_id') }}"
+      - name: page_location
+        description: Page URL extracted from event params (`page_location`).
+      - name: page_referrer
+        description: Referrer URL extracted from event params (`page_referrer`).
+
+  - name: int_ga4__funnel_steps
+    description: Session-level funnel step flags and analysis dimensions.
+    columns:
+      - name: event_date
+        description: Event date in `YYYYMMDD` format.
+      - name: session_id
+        description: "{{ doc('ga4_session_id') }}"
+      - name: user_id
+        description: Pseudonymous GA4 user identifier.
+      - name: device_category
+        description: Session-level device category.
+      - name: traffic_source
+        description: Session-level traffic source.
+      - name: traffic_medium
+        description: Session-level traffic medium.
+      - name: channel_group
+        description: "{{ doc('ga4_channel_group') }}"
+      - name: country
+        description: Session-level country.
+      - name: did_view_item
+        description: "{{ doc('ga4_funnel_steps') }}"
+      - name: did_add_to_cart
+        description: "{{ doc('ga4_funnel_steps') }}"
+      - name: did_begin_checkout
+        description: "{{ doc('ga4_funnel_steps') }}"
+      - name: did_purchase
+        description: "{{ doc('ga4_funnel_steps') }}"
